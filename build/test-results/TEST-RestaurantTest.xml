@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RestaurantTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-04T16:21:33" hostname="epicodus-58.local" time="0.158">
+<testsuite name="RestaurantTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-05-04T17:07:13" hostname="epicodus-58.local" time="0.214">
   <properties/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="RestaurantTest" time="0.077"/>
-  <testcase name="all_emptyAtFirst" classname="RestaurantTest" time="0.028"/>
-  <testcase name="save_returnsTrueIfSaved_true" classname="RestaurantTest" time="0.02"/>
-  <testcase name="getName_restaurantInstantiatesWithName_name" classname="RestaurantTest" time="0.004"/>
-  <testcase name="save_assignsIdToObject" classname="RestaurantTest" time="0.021"/>
-  <testcase name="Restaurant_instantiatesCorrectly_true" classname="RestaurantTest" time="0.005"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="RestaurantTest" time="0.079"/>
+  <testcase name="find_findRestaurantInDatabase_true" classname="RestaurantTest" time="0.038"/>
+  <testcase name="getReviews_retrievesAllReviewsFromDatabase_reviewsList" classname="RestaurantTest" time="0.044"/>
+  <testcase name="all_emptyAtFirst" classname="RestaurantTest" time="0.008"/>
+  <testcase name="save_returnsTrueIfSaved_true" classname="RestaurantTest" time="0.015"/>
+  <testcase name="getName_restaurantInstantiatesWithName_name" classname="RestaurantTest" time="0.005"/>
+  <testcase name="save_assignsIdToObject" classname="RestaurantTest" time="0.02"/>
+  <testcase name="Restaurant_instantiatesCorrectly_true" classname="RestaurantTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

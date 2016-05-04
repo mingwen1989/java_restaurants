@@ -52,23 +52,22 @@ public class RestaurantTest {
     Restaurant savedRestaurant = Restaurant.all().get(0);
     assertEquals(testRestaurant.getId(), savedRestaurant.getId());
   }
-  // @Test
-  //   public void find_findDoctorInDatabase_true() {
-  //   Doctor testDoctor = new Doctor("John Smith", "Endocrinologist");
-  //   testDoctor.save();
-  //   Doctor savedDoctor = Doctor.find(testDoctor.getId());
-  //   assertEquals(savedDoctor.getName(), testDoctor.getName());
-  // }
-  // @Test
-  // public void getPatients_retrievesAllPatientsFromDatabase_patientsList() {
-  //   Doctor testDoctor = new Doctor("John Smith",  "Endocrinologist");
-  //   testDoctor.save();
-  //   Patient firstPatient = new Patient("Jane Doe", "12-14-1980", testDoctor.getId());
-  //   firstPatient.save();
-  //   Patient secondPatient = new Patient("Susan Summers", "11-13-1970", testDoctor.getId());
-  //   secondPatient.save();
-  //   Patient[] patients = new Patient[] { firstPatient, secondPatient };
-  //   System.out.println(testDoctor.getPatients().size());
-  //   assertEquals(testDoctor.getPatients().size(), 2);
-  // }
+  @Test
+    public void find_findRestaurantInDatabase_true() {
+    Restaurant testRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    testRestaurant.save();
+    Restaurant savedRestaurant = Restaurant.find(testRestaurant.getId());
+    assertEquals(savedRestaurant.getName(), testRestaurant.getName());
+  }
+  @Test
+  public void getReviews_retrievesAllReviewsFromDatabase_reviewsList() {
+    Restaurant testRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    testRestaurant.save();
+    Review firstReview = new Review("This is a good restaurant.", testRestaurant.getId(), 4);
+    firstReview.save();
+    Review secondReview = new Review("This is a terrible restaurant.", testRestaurant.getId(), 1);
+    secondReview.save();
+    Review[] reviews = new Review[] { firstReview, secondReview };
+    assertEquals(testRestaurant.getReviews().size(), 2);
+  }
 }

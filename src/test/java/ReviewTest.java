@@ -21,71 +21,64 @@ public class ReviewTest {
       con.createQuery(deleteRestaurantQuery).executeUpdate();
     }
   }
-// //   @Test
-// //   public void patient_instantiatesCorrectly_true() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     assertEquals(true, testPatient instanceof Patient);
-// //   }
-// //   @Test
-// //   public void getName_instantiatesWithName_String() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     assertEquals("Jane Doe", testPatient.getName());
-// //   }
-// //   @Test
-// //   public void getBirthdate_instantiatesWithBirthdate_String() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     assertEquals("12-14-1980", testPatient.getBirthdate());
-// //   }
-// //   @Test
-// //   public void getId_patientsInstantiateWithAnID_1() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     testPatient.save();
-// //     assertEquals(1, testPatient.getDoctorId());
-// //   }
-// //   @Test
-// //   public void all_emptyAtFirst() {
-// //     assertEquals(Patient.all().size(), 0);
-// //   }
-// //
-// //   @Test
-// //   public void equals_returnsTrueIfNamesAretheSame() {
-// //     Patient firstPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     Patient secondPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     assertTrue(firstPatient.equals(secondPatient));
-// //   }
-// //   @Test
-// //   public void find_findsPatientInDatabase_true() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     testPatient.save();
-// //     Patient savedPatient = Patient.find(testPatient.getId());
-// //     assertTrue(testPatient.getName().equals(savedPatient.getName()));
-// //   }
-// //   @Test
-// //   public void save_assignsIdToObject() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     testPatient.save();
-// //     Patient savedPatient = Patient.all().get(0);
-// //     assertEquals(testPatient.getId(), savedPatient.getId());
-// //   }
-// //
-// //   @Test
-// //   public void save_returnsTrueIfNamesAretheSame() {
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", 1);
-// //     testPatient.save();
-// //     assertTrue(Patient.all().get(0).getName().equals(testPatient.getName()));
-// //   }
-// //
-// //   @Test
-// //   public void save_savesDoctorIdIntoDB_true() {
-// //     Doctor testDoctor = new Doctor("John Smith",  "Endocrinologist");
-// //     testDoctor.save();
-// //     Patient testPatient = new Patient("Jane Doe", "12-14-1980", testDoctor.getId());
-// //     testPatient.save();
-// //     Patient savedPatient = Patient.find(testPatient.getId());
-// //     assertEquals(savedPatient.getDoctorId(), testDoctor.getId());
-// //   }
-// //   @Test
-// //   public void find_returnsNullWhenNoPatientFound_null() {
-// //     assertTrue(Patient.find(999) == null);
-// //   }
+  @Test
+  public void review_instantiatesCorrectly_true() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    assertEquals(true, testReview instanceof Review);
+  }
+  @Test
+  public void getReview_instantiatesWithName_String() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    assertEquals("This is a good restaurant.", testReview.getReview());
+  }
+  @Test
+  public void getId_patientsInstantiateWithAnID_1() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    testReview.save();
+    assertEquals(1, testReview.getRestaurantId());
+  }
+  @Test
+  public void all_emptyAtFirst() {
+    assertEquals(Review.all().size(), 0);
+  }
+
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame() {
+    Review firstReview = new Review("This is a good restaurant.", 1, 4);
+    Review secondReview = new Review("This is a good restaurant.", 1, 4);
+    assertTrue(firstReview.equals(secondReview));
+  }
+  @Test
+  public void find_findsReviewInDatabase_true() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    testReview.save();
+    Review savedReview = Review.find(testReview.getId());
+    assertTrue(testReview.getReview().equals(savedReview.getReview()));
+  }
+  @Test
+  public void save_assignsIdToObject() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    testReview.save();
+    Review savedReview = Review.all().get(0);
+    assertEquals(testReview.getId(), savedReview.getId());
+  }
+  @Test
+  public void save_returnsTrueIfReviewsAretheSame() {
+    Review testReview = new Review("This is a good restaurant.", 1, 4);
+    testReview.save();
+    assertTrue(Review.all().get(0).getReview().equals(testReview.getReview()));
+  }
+  @Test
+  public void save_savesRestaurantIdIntoDB_true() {
+    Restaurant testRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    testRestaurant.save();
+    Review testReview = new Review("This is a good restaurant.", testRestaurant.getId(), 4);
+    testReview.save();
+    Review savedReview = Review.find(testReview.getId());
+    assertEquals(savedReview.getRestaurantId(), testRestaurant.getId());
+  }
+  @Test
+  public void find_returnsNullWhenNoReviewFound_null() {
+    assertTrue(Review.find(999) == null);
+  }
 }
