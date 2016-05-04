@@ -1,13 +1,12 @@
 <div class="container">
   <h1 class="header"><center>Restaurants</center></h1>
-  <div class="col-md-4">
-  </div>
-
-  <div class="col-md-4">
-
-  </div>
-
-  <div class="col-md-4">
+  <div class="list">
+    <ul>
+      #foreach($restaurant in $restaurants)
+        <li><span>Name: <a href="/restaurants/$restaurant.getId()"></span>$restaurant.getName()<span></a> | Cuisine Type: </span>$restaurant.getCuisine()<span> | City: </span>$restaurant.getCity()</li>
+        <hr class="style">
+      #end
+    </ul>
   </div>
   <div class="restaurantNew">
     <a href="/restaurants/new">Add a Restaurant</a>
