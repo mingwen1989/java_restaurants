@@ -55,17 +55,11 @@ public class App {
     get("/cuisines/:cuisine", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       String cuisine = request.queryParams(":cuisine");
-      model.put("cuisine", cuisine);
+      Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+      model.put("cuisine", restaurant);
+
       model.put("restaurants", Restaurant.listRestaurantsByCuisine(cuisine));
       model.put("template", "templates/cuisine.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
-
-    get("/restaurants/:id/reviews/new", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("restaurants", Restaurant.all());
-      model.put("template", "templates/new-patient-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

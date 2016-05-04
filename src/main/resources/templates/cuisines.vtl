@@ -1,7 +1,10 @@
 <h1 class="header">Restaurants by Cuisine</h1>
+<div class="padding">
 <ul>
   #foreach($cuisine in $cuisines)
       <li><h3><a href="/cuisines/$cuisine.getCuisine()">$cuisine.getCuisine()</a></h3></li>
     <hr>
   #end
 </ul>
+<a href="/">Go to the homepage</a>
+</div>
