@@ -45,6 +45,13 @@ public class Restaurant {
       return con.createQuery(sql).executeAndFetch(Restaurant.class);
     }
   }
+  public static List<String> allCuisines() {
+    String sql = "SELECT cuisine_type FROM restaurants ORDER BY cuisine_type ASC";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(String.class);
+    }
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO restaurants(name, cuisine_type, city) VALUES (:name, :cuisine_type, :city)";
@@ -73,4 +80,15 @@ public class Restaurant {
         .executeAndFetch(Review.class);
     }
   }
+
+  public static List<Restaurant> listRestaurantsByCuisine(String cuis) {
+  String cuisine = cuis;
+  String sql = "SELECT * FROM restaurants WHERE cuisine_type=:cuisine ORDER BY name ASC";
+  try(Connection con = DB.sql2o.open()) {
+    return con.createQuery(sql)
+    .addParameter("cuisine", cuisine)
+    .executeAndFetch(Restaurant.class);
+  }
+}
+
 }
