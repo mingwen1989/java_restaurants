@@ -1,8 +1,9 @@
-<h1>$restaurant.getName()</h1>
-<h3>$restaurant.getCuisine()</h3>
-<h3>$restaurant.getCity()</h3>
+<div class="restaurant">
+  <h1 class="header">$restaurant.getName()</h1>
+  <h3>$restaurant.getCuisine()</h3>
+  <h3>$restaurant.getCity()</h3>
+</div>
 
-<ul>#foreach ($review in #reviews)
-  <li>$review.getReview()</li>
-    #end
-</ul>
+<div class="restaurantNew">
+<a href="/restaurants/$restaurant.getId()/reviews">View Reviews</a>
+</div>

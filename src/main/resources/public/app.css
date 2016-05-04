@@ -2,23 +2,21 @@ body {
   background-image: url(/img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 150px;
-
 }
 
 .header {
   font-family: Open Sans, sans-serif;
   font-size: 55px;
   letter-spacing: 5px;
-    font-weight: 300;
+  font-weight: 300;
+    text-align: center;
 }
 
-a {
-  font-size: 25px;
-}
+
 .restaurantNew {
-  padding-top: 300px;
+  padding-top: 400px;
   width:100%;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -33,6 +31,22 @@ hr.style {
   font-family: Open Sans, sans-serif;
   font-size: 18px;
   font-weight: 300;
-  padding-left: 45px;
-  padding-left: 20px;
+    text-align: center;
+}
+
+#newReview {
+  height: 50px;
+  font-size: 25px;
+}
+
+ul li {
+  list-style-type: none;
+}
+.restaurant {
+  text-align: center;
+}
+
+.padding {
+  padding:50px;
+  text-align:center;
 }

@@ -34,11 +34,25 @@ public class App {
     get("/restaurants/:id/reviews", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-
-
-      model.put("template", "templates/new-patient-form.vtl");
+      Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+      model.put("restaurant", restaurant);
+      model.put("template", "templates/restaurant-reviews.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/restaurants/:id/reviews", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String newReview = request.queryParams("newReview");
+      int newRating = Integer.parseInt(request.queryParams("newRating"));
+      Restaurant restaurant = Restaurant.find(Integer.parseInt(request.params(":id")));
+      Review review = new Review(newReview, restaurant.getId(), newRating);
+      review.save();
+      model.put("restaurant", restaurant);
+      model.put("review", review);
+      model.put("template", "templates/restaurant-reviews.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
     get("/restaurants/:id/reviews/new", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
