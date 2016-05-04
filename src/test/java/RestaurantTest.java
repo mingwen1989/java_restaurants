@@ -33,25 +33,25 @@ public class RestaurantTest {
   public void all_emptyAtFirst() {
     assertEquals(Restaurant.all().size(), 0);
   }
-  // @Test
-  // public void equals_returnsTrueIfNamesAretheSame() {
-  //   Doctor firstDoctor = new Doctor("John Smith", "Endocrinologist");
-  //   Doctor secondDoctor = new Doctor("John Smith", "Endocrinologist");
-  //   assertTrue(firstDoctor.equals(secondDoctor));
-  // }
-  // @Test
-  // public void save_returnsTrueIfSaved_true() {
-  //   Doctor testDoctor = new Doctor("John Smith", "Endocrinologist");
-  //   testDoctor.save();
-  //   assertEquals(Doctor.all().get(0).getName(),testDoctor.getName());
-  // }
-  // @Test
-  //   public void save_assignsIdToObject() {
-  //   Doctor testDoctor = new Doctor("John Smith", "Endocrinologist");
-  //   testDoctor.save();
-  //   Doctor savedDoctor = Doctor.all().get(0);
-  //   assertEquals(testDoctor.getId(), savedDoctor.getId());
-  // }
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame() {
+    Restaurant firstRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    Restaurant secondRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    assertTrue(firstRestaurant.equals(secondRestaurant));
+  }
+  @Test
+  public void save_returnsTrueIfSaved_true() {
+    Restaurant testRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    testRestaurant.save();
+    assertEquals(Restaurant.all().get(0).getName(),testRestaurant.getName());
+  }
+  @Test
+    public void save_assignsIdToObject() {
+    Restaurant testRestaurant = new Restaurant("Matador", "Mexican", "Portland");
+    testRestaurant.save();
+    Restaurant savedRestaurant = Restaurant.all().get(0);
+    assertEquals(testRestaurant.getId(), savedRestaurant.getId());
+  }
   // @Test
   //   public void find_findDoctorInDatabase_true() {
   //   Doctor testDoctor = new Doctor("John Smith", "Endocrinologist");
