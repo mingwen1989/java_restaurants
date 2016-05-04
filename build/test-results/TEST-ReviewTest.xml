@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ReviewTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-04T17:07:13" hostname="epicodus-58.local" time="0.118">
+<testsuite name="ReviewTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-05-04T17:23:55" hostname="epicodus-58.local" time="0.111">
   <properties/>
-  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="ReviewTest" time="0.004"/>
-  <testcase name="find_returnsNullWhenNoReviewFound_null" classname="ReviewTest" time="0.01"/>
-  <testcase name="review_instantiatesCorrectly_true" classname="ReviewTest" time="0.005"/>
+  <testcase name="equals_returnsTrueIfNamesAretheSame" classname="ReviewTest" time="0.005"/>
+  <testcase name="find_returnsNullWhenNoReviewFound_null" classname="ReviewTest" time="0.008"/>
+  <testcase name="review_instantiatesCorrectly_true" classname="ReviewTest" time="0.004"/>
   <testcase name="all_emptyAtFirst" classname="ReviewTest" time="0.008"/>
   <testcase name="getReview_instantiatesWithName_String" classname="ReviewTest" time="0.005"/>
-  <testcase name="save_returnsTrueIfReviewsAretheSame" classname="ReviewTest" time="0.019"/>
-  <testcase name="getId_patientsInstantiateWithAnID_1" classname="ReviewTest" time="0.012"/>
-  <testcase name="save_savesRestaurantIdIntoDB_true" classname="ReviewTest" time="0.021"/>
-  <testcase name="save_assignsIdToObject" classname="ReviewTest" time="0.016"/>
-  <testcase name="find_findsReviewInDatabase_true" classname="ReviewTest" time="0.016"/>
+  <testcase name="save_returnsTrueIfReviewsAretheSame" classname="ReviewTest" time="0.014"/>
+  <testcase name="getId_patientsInstantiateWithAnID_1" classname="ReviewTest" time="0.008"/>
+  <testcase name="save_savesRestaurantIdIntoDB_true" classname="ReviewTest" time="0.024"/>
+  <testcase name="save_assignsIdToObject" classname="ReviewTest" time="0.012"/>
+  <testcase name="find_findsReviewInDatabase_true" classname="ReviewTest" time="0.021"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

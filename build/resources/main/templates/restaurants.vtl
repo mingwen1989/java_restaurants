@@ -1,0 +1,13 @@
+<div class="container">
+  <ul>
+    #foreach($restaurant in $restaurants)
+      <li>$restaurant.getName()</li>
+      <li><span>Cuisine Type: </span>$restaurant.getCuisine()</li>
+      <li><span>City: </span>$restaurant.getCity()</li>
+      <hr>
+    #end
+  </ul>
+
+  <a href="/restaurants/new">Add a New Restaurant</a>
+  <a href="/">Home Page</a>
+</div>
