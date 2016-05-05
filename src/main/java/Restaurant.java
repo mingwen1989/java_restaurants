@@ -45,8 +45,23 @@ public class Restaurant {
       return con.createQuery(sql).executeAndFetch(Restaurant.class);
     }
   }
+
+  public static List<Restaurant> allDistinct() {
+  String sql = "SELECT DISTINCT name FROM restaurants ORDER BY name ASC";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Restaurant.class);
+    }
+  }
+
   public static List<String> allCuisines() {
-    String sql = "SELECT cuisine_type FROM restaurants ORDER BY cuisine_type ASC";
+    String sql = "SELECT DISTINCT cuisine_type FROM restaurants ORDER BY cuisine_type ASC";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(String.class);
+    }
+  }
+
+  public static List<String> allCities() {
+    String sql = "SELECT DISTINCT city FROM restaurants ORDER BY city ASC";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(String.class);
     }
@@ -84,11 +99,21 @@ public class Restaurant {
   public static List<Restaurant> listRestaurantsByCuisine(String cuis) {
   String cuisine = cuis;
   String sql = "SELECT * FROM restaurants WHERE cuisine_type=:cuisine ORDER BY name ASC";
-  try(Connection con = DB.sql2o.open()) {
-    return con.createQuery(sql)
-    .addParameter("cuisine", cuisine)
-    .executeAndFetch(Restaurant.class);
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql)
+      .addParameter("cuisine", cuisine)
+      .executeAndFetch(Restaurant.class);
+    }
   }
-}
+
+  public static List<Restaurant> listRestaurantsByCity(String cit) {
+  String city = cit;
+  String sql = "SELECT * FROM restaurants WHERE city=:city ORDER BY name ASC";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql)
+      .addParameter("city", city)
+      .executeAndFetch(Restaurant.class);
+    }
+  }
 
 }

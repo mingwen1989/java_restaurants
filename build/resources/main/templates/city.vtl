@@ -1,7 +1,7 @@
-<h1 class="header">$cuisine Restaurants</h1>
+<h1 class="header">$city Restaurants</h1>
 
 <div class="padding">
-<h3>List of restaurants with this cuisine</h3>
+<h3>List of restaurants in this city</h3>
 <ul>
   #foreach($restaurant in $restaurants)
     <li><a href="/restaurants/$restaurant.getId()">$restaurant.getName()</a></li>

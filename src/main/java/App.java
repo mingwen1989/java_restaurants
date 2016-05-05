@@ -66,10 +66,6 @@ public class App {
     get("/cuisines/:cuisine", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       String cuisine = request.params(":cuisine");
-
-      //know cuisine String
-
-      System.out.println(cuisine);
       model.put("cuisine", cuisine);
       model.put("restaurants", Restaurant.listRestaurantsByCuisine(cuisine));
       model.put("template", "templates/cuisine.vtl");
@@ -78,8 +74,24 @@ public class App {
 
     get("/cuisines", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("cuisines", Restaurant.all());
+      model.put("cuisines", Restaurant.allCuisines());
       model.put("template", "templates/cuisines.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/cities/:city", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String city = request.params(":city");
+      model.put("city", city);
+      model.put("restaurants", Restaurant.listRestaurantsByCity(city));
+      model.put("template", "templates/city.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/cities", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("cities", Restaurant.allCities());
+      model.put("template", "templates/cities.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
