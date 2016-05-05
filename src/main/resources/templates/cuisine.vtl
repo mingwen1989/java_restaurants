@@ -1,9 +1,10 @@
-<h1 class="header">$cuisines.getName()</h1>
+<h1 class="header">$cuisine Restaurants</h1>
+
 <div class="padding">
 <h3>List of restaurants with this cuisine</h3>
 <ul>
-  #foreach($cuisine in $cuisines)
-    <li>$cuisines.getName()</li>
+  #foreach($restaurant in $restaurants)
+    <li>$restaurant.getName()</li>
     <hr>
   #end
 </ul>

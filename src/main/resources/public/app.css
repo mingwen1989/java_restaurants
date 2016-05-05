@@ -50,3 +50,8 @@ ul li {
   padding:50px;
   text-align:center;
 }
+
+.center {
+  border-right: 1px #ccc solid;
+  border-left: 1px #ccc solid;
+}

@@ -65,7 +65,11 @@ public class App {
 
     get("/cuisines/:cuisine", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      String cuisine = request.queryParams(":cuisine");
+      String cuisine = request.params(":cuisine");
+
+      //know cuisine String
+
+      System.out.println(cuisine);
       model.put("cuisine", cuisine);
       model.put("restaurants", Restaurant.listRestaurantsByCuisine(cuisine));
       model.put("template", "templates/cuisine.vtl");
