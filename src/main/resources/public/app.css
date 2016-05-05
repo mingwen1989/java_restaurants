@@ -15,6 +15,7 @@ body {
 
 .restaurantNew {
   padding-top: 400px;
+  padding-left: 800px;
   width:100%;
   font-size: 25px;
   text-align: center;
@@ -51,7 +52,7 @@ ul li {
   text-align:center;
 }
 
-.center {
-  border-right: 1px #ccc solid;
-  border-left: 1px #ccc solid;
+.restaurantForm {
+  margin-top: 50px;
+  margin-left: 150px;
 }
